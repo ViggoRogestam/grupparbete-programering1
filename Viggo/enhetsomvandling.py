@@ -1,6 +1,6 @@
 class Length:
 
-    def __init__(self, value: int, unit: str):
+    def __init__(self, value: float, unit: str):
         self.value = value
         self.unit = unit.lower()
 
@@ -14,14 +14,13 @@ class Length:
         elif self.unit == "feet":
             return self.value * 0.3048
         elif self.unit == "kilometer":
-            return self.value / 1000
+            return self.value * 1000
         else:
             return self.value
 
-
     def to_centimeter(self):
         if self.unit == "meter":
-            return self.value / 100
+            return self.value * 100
         elif self.unit == 'milimeter':
             return self.value * 0.1
         elif self.unit == "inches":
@@ -33,15 +32,47 @@ class Length:
         else:
             return self.value
 
-
     def to_kilometer(self):
-        if self.value ==
+        if self.unit == "meter":
+            return self.value * 0.001
+        elif self.unit == "milimeter":
+            return self.value * 0.000001
+        elif self.unit == "inches":
+            return self.value * 0.0000254
+        elif self.unit == "feet":
+            return self.value * 0.0003048
+        elif self.unit == "centimeter":
+            return self.value * 0.00001
+        else:
+            return self.value
 
     def to_inches(self):
-
+        if self.unit == 'meter':
+            return self.value * 39.3701
+        elif self.unit == 'centimeter':
+            return self.value * 0.393701
+        elif self.unit == 'feet':
+            return self.value * 12
+        elif self.unit == 'milimeter':
+            return self.value * 0.0393701
+        elif self.unit == 'kilometer':
+            return self.value * 39370.1
+        else:
+            return self.value
 
     def to_feet(self):
-
+        if self.unit == 'meter':
+            return self.value * 3.28084
+        elif self.unit == 'centimeter':
+            return self.value * 0.0328084
+        elif self.unit == 'milimeter':
+            return self.value * 0.00328084
+        elif self.unit == 'kilomteter':
+            return self.value * 3280.84
+        elif self.unit == 'inches':
+            return self.value * 0.0833333
+        else:
+            return self.value
 
 
 def celsius_to_fahrenheit(celsius):
@@ -50,5 +81,3 @@ def celsius_to_fahrenheit(celsius):
 
 def fahrenheit_to_celsius(fahrenheit):
     return (fahrenheit - 32) * 5 / 9
-
-def
