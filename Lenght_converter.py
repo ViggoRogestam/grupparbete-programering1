@@ -74,6 +74,20 @@ class Length:
         else:
             return self.value
 
+    def to_milimeter(self):
+        if self.unit == 'meter':
+            return self.value * 1000
+        elif self.unit == 'centimeter':
+            return self.value * 10
+        elif self.unit == 'kilometer':
+            return self.value * 1000000
+        elif self.unit == 'inches':
+            return self.value * 25.4
+        elif self.unit == 'feet':
+            return self.value * 304.8
+        else:
+            return self.value
+
 
 def celsius_to_fahrenheit(celsius):
     return (celsius * 9 / 5) + 32
