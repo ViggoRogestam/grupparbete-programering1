@@ -1,6 +1,10 @@
 import pytz
 from datetime import datetime
 
+# Skapa en klass som heter timezone_converter
+# Innuti klassen ska alla attribut och metoder finnas, metoden som jobbar med att konvertera måste finnas i klassen
+# Tänk objektorgenterat
+# Skapa 2 instanser en instans från from_timezone till to_timezone
 
 class TimeInTimezone:
 
@@ -8,7 +12,8 @@ class TimeInTimezone:
         self.time = time
         self.timezone = timezone
 
-
+# hämta en lista så att användaren kan välja mellan olika alternativ
+#
 def convert_timezone(source_time_in_timezone, target_timezone):
     source_tz = pytz.timezone(source_time_in_timezone.timezone)
     target_tz = pytz.timezone(target_timezone)
