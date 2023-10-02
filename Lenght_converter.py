@@ -34,7 +34,7 @@ class Length:
 
     def to_kilometer(self):
         if self.unit == "meter":
-            return self.value * 0.001
+            return float(self.value) * 0.001
         elif self.unit == "milimeter":
             return self.value * 0.000001
         elif self.unit == "inches":
