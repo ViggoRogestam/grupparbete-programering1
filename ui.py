@@ -21,9 +21,3 @@ class Ui:
 
 
 
-
-myUi = Ui(30)
-
-myUi.print_header('test')
-myUi.print_choices('test1', 'test2', 'test3', 'test4', 'test5')
-myUi.print_dot()
