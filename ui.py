@@ -18,6 +18,3 @@ class Ui:
         for i, value in enumerate(choice_list):
             i += 1
             print('| {number} - {choice}'.format(choice=value, number=i))
-
-
-
