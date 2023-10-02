@@ -8,6 +8,7 @@ from volym import clear_screen
 from volym import calculate_volume
 from class_volume import Volume
 volume_calculator = Volume()
+"""from Time_zone import TimeConverter"""
 
 
 while True:
@@ -40,7 +41,7 @@ while True:
         l1 = Lenght_converter.Length(value, unit)
         print(l1.to_kilometer())
         input()
-
+    # TODO: obejkt-orientera koden sedan importera den:
     elif choice == '3':
         pass
     else:
