@@ -1,17 +1,23 @@
+import os
+
 from pytz.exceptions import UnknownTimeZoneError
+
+import Lenght_converter
 from Lenght_converter import Length
+from Lenght_converter import celsius_to_fahrenheit
+from Lenght_converter import fahrenheit_to_celsius
 from ui import Ui
 from volym import print_menu
 from volym import clear_screen
 from volym import calculate_volume
 from class_volume import Volume
+
+volume_calculator = Volume()
 from time_converter import TidszonsOmvandlare
 from time_converter import omvandla_tidszon
 import os
 import area_modul
 import pytz
-
-volume_calculator = Volume()
 
 while True:
     clear_screen()
@@ -22,18 +28,19 @@ while True:
     # User Choice
     choice = input('Enter choice >')
 
-    if choice == '1':
-        if __name__ == "__main__":
-            volume_calculator = Volume()
-            while True:
-                print_menu()
-                val = input("Välj ett av alternativen ovan genom att ange dess siffra!\n> ").lower()
-                if val not in ['1', '2', '3', '4']:
-                    input("Fel: Ogiltigt val\nTryck enter för att fortsätta...")
-                    break
-                if not calculate_volume(val, volume_calculator):
-                    break
-            continue
+    if __name__ == "__main__":
+        volume_calculator = Volume()
+        while True:
+            print_menu()
+            val = input("Välj ett av alternativen ovan genom att ange dess siffra!\n> ").lower()
+            if val not in ['1', '2', '3', '4']:
+                input("Fel: Ogiltigt val\nTryck enter för att fortsätta...")
+                break
+            if not calculate_volume(val, volume_calculator):
+                break
+        continue
+
+
     elif choice == '2':
         clear_screen()
         ui.print_header('Lenght Converter')
@@ -111,12 +118,8 @@ while True:
                 print(f"{e} är inte en giltig tidszon.")
             break
     elif choice == '4':
+        clear_screen()
         while True:
-            # Terminalrensning
-            if os.name == "nt":
-                os.system("cls")
-            else:
-                os.system("clear")
             ui_width = 30
             print("----- Area -----".center(ui_width))
             print("-" * ui_width)
@@ -195,7 +198,6 @@ while True:
                 ui.print_line()
                 print('Avslutar programmet...')
                 from time import sleep
-
                 sleep(3)
                 break
             else:
