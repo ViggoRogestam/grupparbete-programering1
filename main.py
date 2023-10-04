@@ -8,7 +8,7 @@ from volym import clear_screen
 from volym import calculate_volume
 from class_volume import Volume
 volume_calculator = Volume()
-"""from Time_zone import TimeConverter"""
+from time_converter import omvandla_tidszon
 
 
 while True:
@@ -43,7 +43,7 @@ while True:
         input()
     # TODO: obejkt-orientera koden sedan importera den:
     elif choice == '3':
-        pass
+        omvandla_tidszon()
     else:
         input('\nNo valid choice. Press enter to continue...')
         continue
