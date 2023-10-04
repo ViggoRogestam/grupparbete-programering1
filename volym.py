@@ -94,7 +94,8 @@ def calculate_volume(val, volume_calculator):
         print("-" * 5)
 
     fortsätt = input("Vill du forsätta till nästa? J/N > ").lower()
-    return fortsätt == "j"
+    fortsätt_till_nästa = fortsätt == "j"
+
 
 
 if __name__ == "__main__":
