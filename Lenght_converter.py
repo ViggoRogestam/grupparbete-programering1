@@ -18,7 +18,6 @@ class Length:
         elif self.unit == 'meter':
             return float(self.value)
 
-
     def to_centimeter(self):
         if self.unit == "meter":
             return float(self.value) * 100
