@@ -93,9 +93,8 @@ def calculate_volume(val, volume_calculator):
         print(f"Volymen på culindern är {volym}")
         print("-" * 5)
 
-    fortsätt = input("Vill du forsätta till nästa? J/N > ").strip().lower()
-    fortsätt == "j"
-
+    fortsätt = input("Vill du forsätta till nästa? J/N > ").lower()
+    return fortsätt == "j"
 
 
 if __name__ == "__main__":
