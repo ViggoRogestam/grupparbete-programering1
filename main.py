@@ -1,3 +1,5 @@
+import os
+
 from pytz.exceptions import UnknownTimeZoneError
 
 import Lenght_converter
@@ -13,13 +15,15 @@ from class_volume import Volume
 volume_calculator = Volume()
 from time_converter import TidszonsOmvandlare
 from time_converter import omvandla_tidszon
+import os
+import area_modul
 import pytz
 
 while True:
     clear_screen()
     ui = Ui(30)
     ui.print_header('hej')
-    ui.print_choices('volymer', 'längder', 'tidzoner')
+    ui.print_choices('volymer', 'längder', 'tidzoner', 'areor')
     ui.print_dot()
     # User Choice
     choice = input('Enter choice >')
@@ -34,7 +38,7 @@ while True:
                     input("Fel: Ogiltigt val\nTryck enter för att fortsätta...")
                     continue
                 if not calculate_volume(val, volume_calculator):
-                    break
+                    continue
 
     elif choice == '2':
         clear_screen()
@@ -84,9 +88,7 @@ while True:
             input('Error: no valid input.\n Press Enter to continue...')
 
     # TODO: fixa try except
-    # TODO: Bugg att program forstätter till choice 3 om man gör invalid input på lenght converter
 
-    # TODO: obejkt-orientera koden sedan importera den:
     elif choice == '3':
         clear_screen()
         ui.print_header('Tidszonomvandlare')
@@ -114,6 +116,102 @@ while True:
             except UnknownTimeZoneError as e:
                 print(f"{e} är inte en giltig tidszon.")
             break
+    elif choice == '4':
+        clear_screen()
+        while True:
+            ui_width = 30
+            print("----- Area -----".center(ui_width))
+            print("-" * ui_width)
+            print("| 1\t| Rektangel/Kvadrat")
+            print("| 2\t| Triangel")
+            print("| 3\t| Cirkel")
+            print("| 4\t| Romb")
+            print("| 5\t| Parallellogram")
+            print("| 6\t| Parallelltrapets")
+            print("| 7\t| Kon")
+            print("| 8\t| Klot")
+            print("-" * ui_width)
+            print("| Exit\t| Avsluta programmet")
+            print("-" * ui_width)
+
+            # Användarinmatning
+            choice = input("Vad vill du beräkna: ").lower()
+
+            if choice == "1":
+
+                längd = float(input("Ange längd: "))
+                bredd = float(input("Ange bredd: "))
+                figurens_area = area_modul.area().area_rektangel(längd, bredd)
+                ui.print_line()
+                print("Rektangeln/kvadratens area är:", figurens_area, "a.e")
+
+            elif choice == "2":
+                basen = float(input("Ange basen: "))
+                höjden = float(input("Ange höjden: "))
+                figurens_area = area_modul.area().area_triangel(basen, höjden)
+                ui.print_line()
+                print("Triangels area är:", figurens_area, "a.e")
+
+            elif choice == "3":
+                radien = float(input("Ange radie: "))
+                figurens_area = area_modul.area().area_cirkel(radien)
+                ui.print_line()
+                print("Cirkelns area är:", figurens_area, "a.e")
+
+            elif choice == "4":
+                stora_dia = float(input("Ange stora diagonalen: "))
+                lilla_dia = float(input("Ange lilla diagonalen: "))
+                figurens_area = area_modul.area().area_romb(stora_dia, lilla_dia)
+                ui.print_line()
+                print("Rombens area är:", figurens_area, "a.e")
+
+            elif choice == "5":
+                basen = float(input("Ange basen: "))
+                höjden = float(input("Ange höjden: "))
+                figurens_area = area_modul.area().area_parallellogram(basen, höjden)
+                ui.print_line()
+                print("Parallellogrammets area är:", figurens_area, "a.e")
+
+            elif choice == "6":
+                stora_sidan = float(input("Ange längden på stora sidan: "))
+                lilla_sidan = float(input("Ange längden på lilla sidan: "))
+                höjden = float(input("Ange höjden: "))
+                figurens_area = area_modul.area().area_parallelltrapets(stora_sidan, lilla_sidan, höjden)
+                ui.print_line()
+                print("Parallelltrapetsens area är:", figurens_area, "a.e")
+
+            elif choice == "7":
+                radien = float(input("Ange radie: "))
+                sträckan = float(input("Ange sträcka: "))
+                figurens_area = area_modul.area().area_kon(radien, sträckan)
+                ui.print_line()
+                print("Konens area är", figurens_area, "a.e")
+
+            elif choice == "8":
+                radien = float(input("Ange radie: "))
+                figurens_area = area_modul.area().area_cirkel(radien)
+                ui.print_line()
+                print("Klotets area är", figurens_area, "a.e")
+
+            elif choice == 'exit':
+                ui.print_line()
+                print('Avslutar programmet...')
+                from time import sleep
+                sleep(3)
+                break
+            else:
+                print("*" * ui_width)
+                print("*Fel inmatning, ange mellan 1-7")
+
+            print("-" * ui_width)
+            input("Tryck enter för att rensa")
+
+            # Terminalrensning
+            if os.name == "nt":
+                os.system("cls")
+            else:
+                os.system("clear")
+        continue
     if __name__ == "__main__":
         omvandla_tidszon()
 
