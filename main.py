@@ -28,17 +28,18 @@ while True:
     # User Choice
     choice = input('Enter choice >')
 
-    if __name__ == "__main__":
-        volume_calculator = Volume()
-        while True:
-            print_menu()
-            val = input("Välj ett av alternativen ovan genom att ange dess siffra!\n> ").lower()
-            if val not in ['1', '2', '3', '4']:
-                input("Fel: Ogiltigt val\nTryck enter för att fortsätta...")
-                break
-            if not calculate_volume(val, volume_calculator):
-                break
-        continue
+    if choice == '1':
+        if __name__ == "__main__":
+            volume_calculator = Volume()
+            while True:
+                print_menu()
+                val = input("Välj ett av alternativen ovan genom att ange dess siffra!\n> ").lower()
+                if val not in ['1', '2', '3', '4']:
+                    input("Fel: Ogiltigt val\nTryck enter för att fortsätta...")
+                    break
+                if not calculate_volume(val, volume_calculator):
+                    break
+            continue
 
 
     elif choice == '2':
@@ -119,8 +120,8 @@ while True:
             break
     elif choice == '4':
         clear_screen()
+        ui_width = 30
         while True:
-            ui_width = 30
             print("----- Area -----".center(ui_width))
             print("-" * ui_width)
             print("| 1\t| Rektangel/Kvadrat")
@@ -139,79 +140,131 @@ while True:
             choice = input("Vad vill du beräkna: ").lower()
 
             if choice == "1":
-
-                längd = float(input("Ange längd: "))
-                bredd = float(input("Ange bredd: "))
-                figurens_area = area_modul.area().area_rektangel(längd, bredd)
-                ui.print_line()
-                print("Rektangeln/kvadratens area är:", figurens_area, "a.e")
+                try:
+                    while True:
+                        längd = float(input("Ange längd: "))
+                        bredd = float(input("Ange bredd: "))
+                        figurens_area = area_modul.area().area_rektangel(längd, bredd)
+                        ui.print_line()
+                        print("Rektangeln/kvadratens area är:", figurens_area, "a.e")
+                        input('\nTryck enter för att forstätta...')
+                        break
+                except ValueError:
+                    print("Fel inmatning, ange ett tal...")
+                    input('\nTryck enter för att forstätta...')
 
             elif choice == "2":
-                basen = float(input("Ange basen: "))
-                höjden = float(input("Ange höjden: "))
-                figurens_area = area_modul.area().area_triangel(basen, höjden)
-                ui.print_line()
-                print("Triangels area är:", figurens_area, "a.e")
+                try:
+                    while True:
+                        basen = float(input("Ange basen: "))
+                        höjden = float(input("Ange höjden: "))
+                        figurens_area = area_modul.area().area_triangel(basen, höjden)
+                        ui.print_line()
+                        print("Triangels area är:", figurens_area, "a.e")
+                        input('\nTryck enter för att forstätta...')
+                        break
+                except ValueError:
+                    print("Fel inmatning, ange ett tal...")
+                    input('\nTryck enter för att forstätta...')
 
             elif choice == "3":
-                radien = float(input("Ange radie: "))
-                figurens_area = area_modul.area().area_cirkel(radien)
-                ui.print_line()
-                print("Cirkelns area är:", figurens_area, "a.e")
+                while True:
+                    try:
+                        radien = float(input("Ange radie: "))
+                        figurens_area = area_modul.area().area_cirkel(radien)
+                        ui.print_line()
+                        print("Cirkelns area är:", figurens_area, "a.e")
+                        input('\nTryck enter för att forstätta...')
+                        break
+                    except ValueError:
+                        ui.print_line()
+                        print("Fel inmatning, ange ett tal...")
+                        input('\nTryck enter för att forstätta...')
 
             elif choice == "4":
-                stora_dia = float(input("Ange stora diagonalen: "))
-                lilla_dia = float(input("Ange lilla diagonalen: "))
-                figurens_area = area_modul.area().area_romb(stora_dia, lilla_dia)
-                ui.print_line()
-                print("Rombens area är:", figurens_area, "a.e")
+                while True:
+                    try:
+                        stora_dia = float(input("Ange stora diagonalen: "))
+                        lilla_dia = float(input("Ange lilla diagonalen: "))
+                        figurens_area = area_modul.area().area_romb(stora_dia, lilla_dia)
+                        ui.print_line()
+                        print("Rombens area är:", figurens_area, "a.e")
+                        input('\nTryck enter för att forstätta...')
+                        break
+                    except ValueError:
+                        ui.print_line()
+                        print("Fel inmatning, ange ett tal...")
+                        input('\nTryck enter för att forstätta...')
 
             elif choice == "5":
-                basen = float(input("Ange basen: "))
-                höjden = float(input("Ange höjden: "))
-                figurens_area = area_modul.area().area_parallellogram(basen, höjden)
-                ui.print_line()
-                print("Parallellogrammets area är:", figurens_area, "a.e")
+                while True:
+                    try:
+                        basen = float(input("Ange basen: "))
+                        höjden = float(input("Ange höjden: "))
+                        figurens_area = area_modul.area().area_parallellogram(basen, höjden)
+                        ui.print_line()
+                        print("Parallellogrammets area är:", figurens_area, "a.e")
+                        input('\nTryck enter för att forstätta...')
+                        break
+                    except ValueError:
+                        ui.print_line()
+                        print("Fel inmatning, ange ett tal...")
+                        input('\nTryck enter för att forstätta...')
 
             elif choice == "6":
-                stora_sidan = float(input("Ange längden på stora sidan: "))
-                lilla_sidan = float(input("Ange längden på lilla sidan: "))
-                höjden = float(input("Ange höjden: "))
-                figurens_area = area_modul.area().area_parallelltrapets(stora_sidan, lilla_sidan, höjden)
-                ui.print_line()
-                print("Parallelltrapetsens area är:", figurens_area, "a.e")
+                while True:
+                    try:
+                        stora_sidan = float(input("Ange längden på stora sidan: "))
+                        lilla_sidan = float(input("Ange längden på lilla sidan: "))
+                        höjden = float(input("Ange höjden: "))
+                        figurens_area = area_modul.area().area_parallelltrapets(stora_sidan, lilla_sidan, höjden)
+                        ui.print_line()
+                        print("Parallelltrapetsens area är:", figurens_area, "a.e")
+                        input('\nTryck enter för att forstätta...')
+                        break
+                    except ValueError:
+                        ui.print_line()
+                        print("Fel inmatning, ange ett tal...")
+                        input('\nTryck enter för att forstätta...')
 
             elif choice == "7":
-                radien = float(input("Ange radie: "))
-                sträckan = float(input("Ange sträcka: "))
-                figurens_area = area_modul.area().area_kon(radien, sträckan)
-                ui.print_line()
-                print("Konens area är", figurens_area, "a.e")
-
+                while True:
+                    try:
+                        radien = float(input("Ange radie: "))
+                        sträckan = float(input("Ange sträcka: "))
+                        figurens_area = area_modul.area().area_kon(radien, sträckan)
+                        ui.print_line()
+                        print("Konens area är", figurens_area, "a.e")
+                        input('\nTryck enter för att forstätta...')
+                        break
+                    except ValueError:
+                        ui.print_line()
+                        print("Fel inmatning, ange ett tal...")
+                        input('\nTryck enter för att forstätta...')
             elif choice == "8":
-                radien = float(input("Ange radie: "))
-                figurens_area = area_modul.area().area_cirkel(radien)
-                ui.print_line()
-                print("Klotets area är", figurens_area, "a.e")
+                while True:
+                    try:
+                        radien = float(input("Ange radie: "))
+                        figurens_area = area_modul.area().area_cirkel(radien)
+                        ui.print_line()
+                        print("Klotets area är", figurens_area, "a.e")
+                        input('\nTryck enter för att forstätta...')
+                        break
+                    except ValueError:
+                        print("Fel inmatning, ange ett tal...")
+                        input('\nTryck enter för att forstätta...')
 
-            elif choice == 'exit':
+            elif choice == "exit":
                 ui.print_line()
-                print('Avslutar programmet...')
+                print("Avslutar programmet")
                 from time import sleep
+
                 sleep(3)
                 break
-            else:
-                print("*" * ui_width)
-                print("*Fel inmatning, ange mellan 1-7")
 
-            print("-" * ui_width)
-            input("Tryck enter för att rensa")
-
-            # Terminalrensning
-            if os.name == "nt":
-                os.system("cls")
             else:
-                os.system("clear")
+                print('*'* ui_width)
+                input('*Fel inmatning, ange ett tal mellan 1-8 eller "exit" för att gå ut')
         continue
     if __name__ == "__main__":
         omvandla_tidszon()
