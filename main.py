@@ -43,7 +43,7 @@ while True:
                 fortsätt_till_nästa = fortsätt == "j"
                 if not fortsätt_till_nästa:
                     break
-
+        continue
     elif choice == '2':
         clear_screen()
         ui.print_header('Lenght Converter')
