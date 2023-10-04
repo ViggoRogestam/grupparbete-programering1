@@ -83,6 +83,7 @@ while True:
             continue
         else:
             input('Error: no valid input.\n Press Enter to continue...')
+            continue
 
     # TODO: fixa try except
     # TODO: Bugg att program forstätter till choice 3 om man gör invalid input på lenght converter
