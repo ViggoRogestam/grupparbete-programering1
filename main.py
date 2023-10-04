@@ -25,25 +25,17 @@ while True:
     choice = input('Enter choice >')
 
     if choice == '1':
-        clear_screen()
-        print_menu()
-        choice = input('Välj ett av alternativen ovan genom att ange dess siffra! >')
-        calculate_volume(choice, volume_calculator)
-        input()
         if __name__ == "__main__":
             volume_calculator = Volume()
             while True:
                 print_menu()
-                val = input("Välj ett av alternativen ovan genom att ange dess siffra!\n> ")
-
+                val = input("Välj ett av alternativen ovan genom att ange dess siffra!\n> ").lower()
+                if val not in ['1', '2', '3', '4']:
+                    input("Fel: Ogiltigt val\nTryck enter för att fortsätta...")
+                    continue
                 if not calculate_volume(val, volume_calculator):
                     break
 
-                fortsätt = input("Vill du forsätta till nästa? J/N > ").lower()
-                fortsätt_till_nästa = fortsätt == "j"
-                if not fortsätt_till_nästa:
-                    break
-        continue
     elif choice == '2':
         clear_screen()
         ui.print_header('Lenght Converter')
@@ -90,7 +82,6 @@ while True:
             continue
         else:
             input('Error: no valid input.\n Press Enter to continue...')
-            continue
 
     # TODO: fixa try except
     # TODO: Bugg att program forstätter till choice 3 om man gör invalid input på lenght converter

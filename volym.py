@@ -93,8 +93,8 @@ def calculate_volume(val, volume_calculator):
         print(f"Volymen på culindern är {volym}")
         print("-" * 5)
 
-    fortsätt = input("Vill du forsätta till nästa? J/N > ").lower()
-    fortsätt_till_nästa = fortsätt == "j"
+    fortsätt = input("Vill du forsätta till nästa? J/N > ").strip().lower()
+    fortsätt == "j"
 
 
 
@@ -102,7 +102,7 @@ if __name__ == "__main__":
     volume_calculator = Volume()
     while True:
         print_menu()
-        val = input("Välj ett av alternativen ovan genom att ange dess siffra!\n> ")
+        val = input("Välj ett av alternativen ovan genom att ange dess siffra!\n> ").lower()
         if val not in ['1', '2', '3', '4']:
             input("Fel: Ogiltigt val\nTryck enter för att fortsätta...")
             continue
