@@ -84,10 +84,10 @@ while True:
     # TODO: fixa try except
 
     elif choice == '3':
-        clear_screen()
-        ui.print_header('Tidszonomvandlare')
-        ui.print_line()
         while True:
+            clear_screen()
+            ui.print_header('Tidszonomvandlare')
+            ui.print_line()
             try:
                 fran_tidszon_input = input(
                     "Ange kontinent/huvudstad du vill konvertera från: (t.ex. 'Europe/Stockholm') eller 'avsluta' för att avsluta: ")
