@@ -28,17 +28,18 @@ while True:
     # User Choice
     choice = input('Enter choice >')
 
-    if choice == '1':
-        if __name__ == "__main__":
-            volume_calculator = Volume()
-            while True:
-                print_menu()
-                val = input("Välj ett av alternativen ovan genom att ange dess siffra!\n> ").lower()
-                if val not in ['1', '2', '3', '4']:
-                    input("Fel: Ogiltigt val\nTryck enter för att fortsätta...")
-                    continue
-                if not calculate_volume(val, volume_calculator):
-                    continue
+    if __name__ == "__main__":
+        volume_calculator = Volume()
+        while True:
+            print_menu()
+            val = input("Välj ett av alternativen ovan genom att ange dess siffra!\n> ").lower()
+            if val not in ['1', '2', '3', '4']:
+                input("Fel: Ogiltigt val\nTryck enter för att fortsätta...")
+                break
+            if not calculate_volume(val, volume_calculator):
+                break
+        continue
+
 
     elif choice == '2':
         clear_screen()
