@@ -15,8 +15,9 @@ class Length:
             return float(self.value) * 0.3048
         elif self.unit == "kilometer":
             return float(self.value) * 1000
-        else:
+        elif self.unit == 'meter':
             return float(self.value)
+
 
     def to_centimeter(self):
         if self.unit == "meter":
@@ -29,7 +30,7 @@ class Length:
             return float(self.value) * 30.48
         elif self.unit == "kilometer":
             return float(self.value) * 100000
-        else:
+        elif self.unit == 'centimeter':
             return float(self.value)
 
     def to_kilometer(self):
@@ -43,7 +44,7 @@ class Length:
             return float(self.value) * 0.0003048
         elif self.unit == "centimeter":
             return float(self.value) * 0.00001
-        else:
+        elif self.unit == 'kilometer':
             return float(self.value)
 
     def to_inches(self):
@@ -57,7 +58,7 @@ class Length:
             return float(self.value) * 0.0393701
         elif self.unit == 'kilometer':
             return float(self.value) * 39370.1
-        else:
+        elif self.unit == 'inches':
             return float(self.value)
 
     def to_feet(self):
@@ -71,7 +72,7 @@ class Length:
             return float(self.value) * 3280.84
         elif self.unit == 'inches':
             return float(self.value) * 0.0833333
-        else:
+        elif self.unit == 'feet':
             return float(self.value)
 
     def to_milimeter(self):
@@ -85,7 +86,7 @@ class Length:
             return float(self.value) * 25.4
         elif self.unit == 'feet':
             return float(self.value) * 304.8
-        else:
+        elif self.unit == 'milimeter':
             return float(self.value)
 
 

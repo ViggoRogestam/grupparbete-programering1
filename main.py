@@ -50,7 +50,9 @@ while True:
         ui.print_dot()
         choice = input('>')
         ui.print_line()
+
         #  if milimeter
+        # TODO: fix print if no valid unit is provieded
         if choice == '1':
             print(f'{length} equals {(l1.to_milimeter())} milimeter')
             input()
