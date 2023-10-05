@@ -4,8 +4,8 @@ from pytz.exceptions import UnknownTimeZoneError
 
 import Lenght_converter
 from Lenght_converter import Length
-from Lenght_converter import celsius_to_fahrenheit
-from Lenght_converter import fahrenheit_to_celsius
+#from Lenght_converter import celsius_to_fahrenheit
+#from Lenght_converter import fahrenheit_to_celsius
 from ui import Ui
 from volym import print_menu
 from volym import clear_screen
@@ -27,7 +27,7 @@ while True:
     ui.print_choices('volymer', 'längder', 'tidzoner', 'areor')
     ui.print_dot()
     # User Choice
-    choice = input('Enter choice >')
+    choice = input('Enter choice > ')
 
     if choice == '1':
         if __name__ == "__main__":
@@ -35,7 +35,7 @@ while True:
             while True:
                 print_menu()
                 val = input("Välj ett av alternativen ovan genom att ange dess siffra!\n> ").lower()
-                if val not in ['1', '2', '3', '4']:
+                if val not in ['1', '2', '3', '4', '5']:
                     input("Fel: Ogiltigt val\nTryck enter för att fortsätta...")
                     break
                 if not calculate_volume(val, volume_calculator):

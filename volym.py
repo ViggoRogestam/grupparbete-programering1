@@ -19,7 +19,7 @@ def print_menu():
     print(" ")
     print("Du kan välja mellan att räkna\nut volymen på")
     print("-" * 5)
-    print("1: Kub\n2: Rätblock\n3: Prisma\n4: Cylinder\n")
+    print("1: Kub\n2: Rätblock\n3: Prisma\n4: Cylinder\n5: Exit")
     print("-" * 5)
 
 
@@ -101,6 +101,9 @@ def calculate_volume(val, volume_calculator):
         volym = volume_calculator.cylinder_volym(radie, höjd)
         print(f"Volymen på culindern är {volym}")
         print("-" * 5)
+    
+    elif val == "5":
+        return False
 
     # Loopa tills användaren ger ett giltigt svar (j eller n)
     while True:
@@ -121,7 +124,7 @@ if __name__ == "__main__":
         # Visa huvudmenyn för volymberäkning
         print_menu()
         val = input("Välj ett av alternativen ovan genom att ange dess siffra!\n> ").lower()
-        if val not in ['1', '2', '3', '4']:
+        if val not in ['1', '2', '3', '4', '5']:
             input("Fel: Ogiltigt val\nTryck enter för att fortsätta...")
             continue
         if not calculate_volume(val, volume_calculator):
