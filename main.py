@@ -21,8 +21,9 @@ import pytz
 
 while True:
     clear_screen()
+    # Prints user intefrance
     ui = Ui(30)
-    ui.print_header('hej')
+    ui.print_header('Omvandlaren')
     ui.print_choices('volymer', 'längder', 'tidzoner', 'areor')
     ui.print_dot()
     # User Choice
@@ -43,9 +44,12 @@ while True:
 
     elif choice == '2':
         clear_screen()
+        # Print User Interface
         ui.print_header('Lenght Converter')
         ui.print_line()
+        # Ask user for input
         length = input('Enter lenght and unit >')
+        # Try to split input to get value and unit separate
         try:
             value, unit = length.split()
             float(value)
@@ -54,7 +58,7 @@ while True:
             ui.print_line()
             input('ValueError: Enter valid lenght and unit.\n\nPress Enter to continue')
             continue
-
+        # Crate object of lenght class
         l1 = Length(value, unit)
         # Ui
         clear_screen()
