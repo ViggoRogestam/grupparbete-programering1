@@ -144,11 +144,11 @@ while True:
             print("| 7\t| Kon")
             print("| 8\t| Klot")
             print("-" * ui_width)
-            print("| Exit\t| Ange val: ")
+            print("| Exit\t| Avslutar programmet: ")
             print("-" * ui_width)
 
             # Användarinmatning
-            choice = input("Vad vill du beräkna: ").lower()
+            choice = input("Ange val: ").lower()
 
             if choice == "1":
                 try:
