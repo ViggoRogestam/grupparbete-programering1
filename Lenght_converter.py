@@ -1,6 +1,11 @@
 class Length:
 
     def __init__(self, value: float, unit: str):
+        """
+
+        :param value: Enter lenght
+        :param unit: Enter Unit
+        """
         self.value = value
         self.unit = unit.lower()
 

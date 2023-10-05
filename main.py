@@ -41,15 +41,20 @@ while True:
                     break
             continue
 
-
     elif choice == '2':
         clear_screen()
         ui.print_header('Lenght Converter')
         ui.print_line()
         length = input('Enter lenght and unit >')
-        value, unit = length.split()
-        float(value)
-        str(unit)
+        try:
+            value, unit = length.split()
+            float(value)
+            str(unit)
+        except ValueError:
+            ui.print_line()
+            input('ValueError: Enter valid lenght and unit.\n\nPress Enter to continue')
+            continue
+
         l1 = Length(value, unit)
         # Ui
         clear_screen()
@@ -60,36 +65,38 @@ while True:
         choice = input('>')
         ui.print_line()
 
-        #  if milimeter
-        # TODO: fix print if no valid unit is provieded
-        if choice == '1':
-            print(f'{length} equals {(l1.to_milimeter())} milimeter')
-            input()
-            continue
-        elif choice == '2':
-            print(f'{length} equals {(l1.to_centimeter())} centimeter')
-            input()
-            continue
-        elif choice == '3':
-            print(f'{length} equals {(l1.to_meter())} meter')
-            input()
-            continue
-        elif choice == '4':
-            print(f'{length} equals {(l1.to_kilometer())} kilometer')
-            input()
-            continue
-        elif choice == '5':
-            print(f'{length} equals {(l1.to_inches())} inches')
-            input()
-            continue
-        elif choice == '6':
-            print(f'{length} equals {(l1.to_feet())} feet')
-            input()
-            continue
-        else:
-            input('Error: no valid input.\n Press Enter to continue...')
+        if unit in ['Milimeter', 'Centimeter', 'Meter', 'Kilometer', 'Inches', 'Feet']:
 
-    # TODO: fixa try except
+            if choice == '1':
+                print(f'{length} equals {(l1.to_milimeter())} milimeter')
+                input()
+                continue
+            elif choice == '2':
+                print(f'{length} equals {(l1.to_centimeter())} centimeter')
+                input()
+                continue
+            elif choice == '3':
+                print(f'{length} equals {(l1.to_meter())} meter')
+                input()
+                continue
+            elif choice == '4':
+                print(f'{length} equals {(l1.to_kilometer())} kilometer')
+                input()
+                continue
+            elif choice == '5':
+                print(f'{length} equals {(l1.to_inches())} inches')
+                input()
+                continue
+            elif choice == '6':
+                print(f'{length} equals {(l1.to_feet())} feet')
+                input()
+                continue
+            else:
+                input('Error: no valid input.\n\n Press Enter to continue...')
+        else:
+            ui.print_line()
+            input(f'Error: {unit} is not valid\n\n Press Enter to continue...')
+            continue
 
     elif choice == '3':
         while True:
@@ -263,12 +270,13 @@ while True:
                 break
 
             else:
-                print('*'* ui_width)
+                print('*' * ui_width)
                 input('*Fel inmatning, ange ett tal mellan 1-8 eller "exit" för att gå ut')
+        continue
+
+    else:
+        ui.print_line()
+        input('No valid choice.\n\nPress enter to continue...')
         continue
     if __name__ == "__main__":
         omvandla_tidszon()
-
-    else:
-        input('\nNo valid choice. Press enter to continue...')
-        continue
