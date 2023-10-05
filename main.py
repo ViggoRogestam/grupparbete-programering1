@@ -144,7 +144,7 @@ while True:
             print("| 7\t| Kon")
             print("| 8\t| Klot")
             print("-" * ui_width)
-            print("| Exit\t| Avslutar programmet: ")
+            print("| Exit\t| Avslutar programmet ")
             print("-" * ui_width)
 
             # Användarinmatning
