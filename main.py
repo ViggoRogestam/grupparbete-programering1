@@ -69,7 +69,7 @@ while True:
         choice = input('>')
         ui.print_line()
 
-        if unit in ['Milimeter', 'Centimeter', 'Meter', 'Kilometer', 'Inches', 'Feet']:
+        if unit in ['milimeter', 'centimeter', 'meter', 'kilometer', 'inches', 'feet']:
 
             if choice == '1':
                 print(f'{length} equals {(l1.to_milimeter())} milimeter')

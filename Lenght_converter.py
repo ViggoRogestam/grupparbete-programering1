@@ -92,11 +92,3 @@ class Length:
             return float(self.value) * 304.8
         elif self.unit == 'milimeter':
             return float(self.value)
-
-
-def celsius_to_fahrenheit(celsius):
-    return (celsius * 9 / 5) + 32
-
-
-def fahrenheit_to_celsius(fahrenheit):
-    return (fahrenheit - 32) * 5 / 9
