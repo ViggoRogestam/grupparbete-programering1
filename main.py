@@ -1,30 +1,23 @@
-import os
 
 from pytz.exceptions import UnknownTimeZoneError
-
-import Lenght_converter
 from Lenght_converter import Length
-from Lenght_converter import celsius_to_fahrenheit
-from Lenght_converter import fahrenheit_to_celsius
 from ui import Ui
 from volym import print_menu
 from volym import clear_screen
 from volym import calculate_volume
 from class_volume import Volume
-
-volume_calculator = Volume()
 from time_converter import TidszonsOmvandlare
 from time_converter import omvandla_tidszon
-import os
 import area_modul
 import pytz
+volume_calculator = Volume()
 
 while True:
     clear_screen()
     # Prints user intefrance
     ui = Ui(30)
     ui.print_header('Omvandlaren')
-    ui.print_choices('volymer', 'längder', 'tidzoner', 'areor')
+    ui.print_choices('volymer', 'längder', 'tidzoner', 'areor', 'exit')
     ui.print_dot()
     # User Choice
     choice = input('Enter choice >')
@@ -277,6 +270,11 @@ while True:
                 print('*' * ui_width)
                 input('*Fel inmatning, ange ett tal mellan 1-8 eller "exit" för att gå ut')
         continue
+
+    elif choice == '5':
+        clear_screen()
+        print('Program stopped')
+        exit()
 
     else:
         ui.print_line()
