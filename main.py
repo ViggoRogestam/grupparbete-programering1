@@ -123,9 +123,9 @@ while True:
                 print(f"{e} är inte en giltig tidszon.")
             break
     elif choice == '4':
-        clear_screen()
         ui_width = 30
         while True:
+            clear_screen()
             print("----- Area -----".center(ui_width))
             print("-" * ui_width)
             print("| 1\t| Rektangel/Kvadrat")
