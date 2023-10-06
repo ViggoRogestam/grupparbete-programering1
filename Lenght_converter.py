@@ -1,6 +1,11 @@
 class Length:
 
     def __init__(self, value: float, unit: str):
+        """
+
+        :param value: Enter lenght
+        :param unit: Enter Unit
+        """
         self.value = value
         self.unit = unit.lower()
 
@@ -17,7 +22,6 @@ class Length:
             return float(self.value) * 1000
         elif self.unit == 'meter':
             return float(self.value)
-
 
     def to_centimeter(self):
         if self.unit == "meter":
@@ -88,11 +92,3 @@ class Length:
             return float(self.value) * 304.8
         elif self.unit == 'milimeter':
             return float(self.value)
-
-
-def celsius_to_fahrenheit(celsius):
-    return (celsius * 9 / 5) + 32
-
-
-def fahrenheit_to_celsius(fahrenheit):
-    return (fahrenheit - 32) * 5 / 9
