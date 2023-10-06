@@ -37,7 +37,7 @@ while True:
                 val = input("Välj ett av alternativen ovan genom att ange dess siffra!\n> ").lower()
                 if val not in ['1', '2', '3', '4', '5']:
                     input("Fel: Ogiltigt val\nTryck enter för att fortsätta...")
-                    break
+                    continue
                 if not calculate_volume(val, volume_calculator):
                     break
             continue
