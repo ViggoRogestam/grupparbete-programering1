@@ -18,7 +18,7 @@ while True:
     # Prints user intefrance
     ui = Ui(30)
     ui.print_header('Omvandlaren')
-    ui.print_choices('volymer', 'längder', 'tidzoner', 'areor')
+    ui.print_choices('volymer', 'längder', 'tidzoner', 'areor', 'exit')
     ui.print_dot()
     # User Choice
     choice = input('Enter choice > ')
@@ -271,6 +271,10 @@ while True:
                 print('*' * ui_width)
                 input('*Fel inmatning, ange ett tal mellan 1-8 eller "exit" för att gå ut')
         continue
+    elif choice == '5':
+        ui.print_line()
+        print('Program closed')
+        exit()
 
     else:
         ui.print_line()
