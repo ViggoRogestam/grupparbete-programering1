@@ -38,14 +38,28 @@ def omvandla_tidszon():
     print("\n--- Tidszonsomvandlare ---")
 
     while True:
+        """
+        Huvudloop för tidszonsomvandlingsprogrammet.
+
+        Användaren ombeds att ange käll- och måltidszoner,
+        och den aktuella tiden omvandlas därefter.
+
+        Loopen fortsätter tills användaren väljer att avsluta genom att skriva 'avsluta'.
+
+        Kastar:
+            UnknownTimeZoneError: Om den angivna tidszonen inte känns igen.
+
+        """
         try:
-            fran_tidszon_input = input("Ange kontinent/huvudstad du vill konvertera från: (t.ex. 'Europe/Stockholm') eller 'avsluta' för att avsluta: ")
+            fran_tidszon_input = input(
+                "Ange kontinent/huvudstad du vill konvertera från: (t.ex. 'Europe/Stockholm') eller 'avsluta' för att avsluta: ")
             if fran_tidszon_input == 'avsluta':
                 break
             fran_tidszon_strang = fran_tidszon_input or "Europe/Stockholm"
             fran_tidszon = pytz.timezone(fran_tidszon_strang)
 
-            till_tidszon_input = input("Ange kontinent/huvudstad du vill konvertera till: (t.ex. 'Europe/London') eller 'avsluta' för att avsluta: ")
+            till_tidszon_input = input(
+                "Ange kontinent/huvudstad du vill konvertera till: (t.ex. 'Europe/London') eller 'avsluta' för att avsluta: ")
             if till_tidszon_input == 'avsluta':
                 break
             till_tidszon_strang = till_tidszon_input or "Europe/London"
@@ -56,6 +70,15 @@ def omvandla_tidszon():
             print(f"\nOmvandlad tid från {fran_tidszon_strang} till {till_tidszon_strang}: {omvandlad_tid}\n")
 
         except UnknownTimeZoneError as e:
+            """
+            Hanterar ett UnknownTimeZoneError.
+
+            Om den angivna tidszonen inte känns igen, skrivs ett felmeddelande ut.
+
+            Args:
+                e (UnknownTimeZoneError): Exception-objektet.
+
+            """
             print(f"{e} är inte en giltig tidszon.")
 
 
