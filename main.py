@@ -9,6 +9,8 @@ from time_converter import TidszonsOmvandlare
 from time_converter import omvandla_tidszon
 import area_modul
 import pytz
+
+#Variables
 volume_calculator = Volume()
 
 while True:
