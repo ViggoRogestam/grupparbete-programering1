@@ -1,23 +1,15 @@
-import os
-
 from pytz.exceptions import UnknownTimeZoneError
-
-import Lenght_converter
 from Lenght_converter import Length
-#from Lenght_converter import celsius_to_fahrenheit
-#from Lenght_converter import fahrenheit_to_celsius
 from ui import Ui
 from volym import print_menu
 from volym import clear_screen
 from volym import calculate_volume
 from class_volume import Volume
-
-volume_calculator = Volume()
 from time_converter import TidszonsOmvandlare
 from time_converter import omvandla_tidszon
-import os
 import area_modul
 import pytz
+volume_calculator = Volume()
 
 while True:
     clear_screen()
